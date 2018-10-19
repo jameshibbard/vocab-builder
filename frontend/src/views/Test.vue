@@ -26,7 +26,7 @@ export default {
     };
   },
   async mounted() {
-    this.words = (await api.getWords()).slice(0, 5);
+    this.words = await api.getWords();
   }
 };
 </script>
