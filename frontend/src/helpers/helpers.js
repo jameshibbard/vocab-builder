@@ -1,19 +1,18 @@
 import axios from "axios";
+import Vue from "vue";
 
-export const flashMessages = [];
 export const flashOptions = {
   timeout: 3000,
   pauseOnInteract: true
 };
 
+const vm = Vue;
+
 const baseURL = "http://localhost:3000/words/";
 
 const handleError = fn => (...params) =>
   fn(...params).catch(error => {
-    flashMessages.push({
-      text: `${error.response.status}: ${error.response.statusText}`,
-      type: "error"
-    });
+    vm.flash(`${error.response.status}: ${error.response.statusText}`, "error");
   });
 
 export const api = {

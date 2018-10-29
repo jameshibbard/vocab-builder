@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { flashMessages, api } from "../helpers/helpers";
+import { api } from "../helpers/helpers";
 
 export default {
   name: "words",
@@ -40,7 +40,7 @@ export default {
       if (!sure) return;
 
       await api.deleteWord(id);
-      flashMessages.push({ text: "Word deleted sucessfully!" });
+      this.flash("Word deleted sucessfully!", "success");
       const newWords = this.words.filter(word => word._id !== id);
       this.words = newWords;
     }

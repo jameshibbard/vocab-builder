@@ -30,24 +30,8 @@
 </template>
 
 <script>
-import { flashMessages, flashOptions } from "./helpers/helpers";
-
 export default {
-  name: "app",
-  data: () => {
-    return {
-      messages: flashMessages
-    };
-  },
-  watch: {
-    messages: function() {
-      this.messages.forEach(msg => {
-        const { text, type = "success", options = flashOptions } = msg;
-        this.flash(text, type, options);
-        flashMessages.pop();
-      });
-    }
-  }
+  name: "app"
 };
 </script>
 

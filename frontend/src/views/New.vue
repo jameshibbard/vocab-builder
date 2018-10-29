@@ -17,7 +17,8 @@ export default {
   methods: {
     createOrUpdate: async function(word) {
       const res = await api.createWord(word);
-      flashMessages.push({ text: "Word created sucessfully!" });
+      // flashMessages.push({ text: "Word created sucessfully!" });
+      this.flash("Word created", "success");
       this.$router.push(`/words/${res._id}`);
     }
   }
