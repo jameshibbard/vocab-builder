@@ -1,12 +1,13 @@
-# Build a Basic CRUD App with Vue.js, Node and MongoDB
+# Vue.js Vocab Builder
 
-Build a simple CRUD app (Create, Read, Update and Delete) using Node, MongoDB and Vue.
+A simple vocab trainer built using Node, MongoDB and Vue.
+
+Originally written to accompany a [SitePoint Premium article](https://www.sitepoint.com/premium/books/build-a-basic-crud-app-with-vue-js-node-and-mongodb).
 
 ## Requirements
 
 - [Node.js](http://nodejs.org/)
 - [MongoDB](https://www.mongodb.org/)
-- [Postman](https://www.getpostman.com/)
 
 ## Installation Steps (if applicable)
 
@@ -22,9 +23,9 @@ Build a simple CRUD app (Create, Read, Update and Delete) using Node, MongoDB an
 
 ## License
 
-SitePoint's code archives and code examples are licensed under the MIT license.
+Code archives and code examples are licensed under the MIT license.
 
-Copyright © 2018 SitePoint
+Copyright © 2019 James Hibbard
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
