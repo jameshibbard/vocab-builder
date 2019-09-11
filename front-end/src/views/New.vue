@@ -16,9 +16,11 @@ export default {
   },
   methods: {
     createOrUpdate: async function(word) {
-      const res = await api.createWord(word);
+      await api.createWord(word);
       this.flash('Word created', 'success');
-      this.$router.push(`/words/${res._id}`);
+      this.$router.push(`/words/new`);
+      word.german = '';
+      word.english = '';
     }
   }
 };

@@ -4,16 +4,16 @@
 
     <div class="ui labeled input fluid">
       <div class="ui label">
-        <i class="germany flag"></i> German
+        <i class="united kingdom flag"></i> English
       </div>
-      <input type="text" placeholder="Enter word..." v-model="word.german" />
+      <input type="text" placeholder="Enter word..." v-model="word.english" ref="englishWord" />
     </div>
 
     <div class="ui labeled input fluid">
       <div class="ui label">
-        <i class="united kingdom flag"></i> English
+        <i class="germany flag"></i> German
       </div>
-      <input type="text" placeholder="Enter word..." v-model="word.english" />
+      <input type="text" placeholder="Enter word..." v-model="word.german" />
     </div>
 
     <button class="positive ui button">Submit</button>
@@ -45,6 +45,7 @@ export default {
       if (this.word.english === '' || this.word.german === '') {
         this.errorsPresent = true;
       } else {
+        this.$refs.englishWord.focus();
         this.$emit('createOrUpdate', this.word);
       }
     }
