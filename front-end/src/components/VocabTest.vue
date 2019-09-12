@@ -52,12 +52,17 @@ export default {
   },
   methods: {
     onSubmit: function() {
-      if (this.english === this.currWord.english) {
+      if (this.english.trim() === this.currWord.english.trim()) {
         this.flash('Correct!', 'success', { timeout: 1000 });
         this.score += 1;
       } else {
         this.flash('Wrong!', 'error', { timeout: 1000 });
-        this.incorrectGuesses.push(this.currWord.german);
+        this.incorrectGuesses.push({
+          german: this.currWord.german,
+          english: this.currWord.english,
+          guess: this.english === "" ? "n/a" : this.english
+        });
+        this.displayResults();
       }
 
       this.english = '';
@@ -73,10 +78,18 @@ export default {
         this.result = 'You got everything correct. Well done!';
         this.resultClass = 'success';
       } else {
-        const incorrect = this.incorrectGuesses.join(', ');
-        this.result = `<strong>You got the following words wrong:</strong> ${incorrect}`;
+        this.result = `<strong>You got the following words wrong:</strong> ${this.getErrorList()}`;
         this.resultClass = 'error';
       }
+    },
+    getErrorList: function() {
+      return `<ul>
+        ${this.incorrectGuesses
+          .map(
+            word => `<li>${word.german} — ${word.english} — ${word.guess}</li>`
+          )
+          .join("")}
+      </ul>`;
     }
   }
 };
