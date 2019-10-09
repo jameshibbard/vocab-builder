@@ -10,7 +10,10 @@ mongoose.Promise = global.Promise;
 mongoose.set('useFindAndModify', false);
 mongoose.connect(
   'mongodb://localhost/vocab-builder',
-  { useNewUrlParser: true }
+  {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+  }
 );
 
 const port = process.env.PORT || 3000;
