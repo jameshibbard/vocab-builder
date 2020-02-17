@@ -42,6 +42,8 @@ export default {
   },
   methods: {
     onSubmit: function() {
+      this.errorsPresent = false;
+
       if (this.word.english === '' || this.word.german === '') {
         this.errorsPresent = true;
       } else {
